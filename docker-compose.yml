@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+
+  mosquitto:
+    image: eclipse-mosquitto
+    ports:
+      - 1883:1883
+      - 9001:9001
+    volumes:
+      - ./data/mosquitto.conf:/mosquitto/config/mosquitto.conf
+
+  panduza-py-platform:
+    build: /home/xdoctorwhoz/work/panduza-py-platform
+    privileged: true
+    network_mode: host
+    volumes:
+      - .:/etc/panduza
+      - /run/udev:/run/udev:ro  # Import udev database for usb ids inside the docker
+    # command: bash
+

@@ -1,0 +1,32 @@
+{
+    "machine": "test",
+    "brokers": {
+        "test_broker": {
+            "addr": "localhost",
+            "port": 1883,
+            "interfaces": [
+
+                {
+                    "name": "test",
+                    "driver": "picoha_io",
+                    "settings": {
+                        "gpio_id": 0,
+                        "polling_time_ms": 10000,
+                        "usbid_vendor": "16c0",
+                        "usbid_product": "05e1"
+                    }
+                },
+                {
+                    "name": "test_out",
+                    "driver": "picoha_io",
+                    "settings": {
+                        "gpio_id": 1,
+                        "polling_time_ms": 10000,
+                        "usbid_vendor": "16c0",
+                        "usbid_product": "05e1"
+                    }
+                }
+            ]
+        }
+    }
+}
