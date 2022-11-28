@@ -11,11 +11,12 @@ services:
       - ./data/mosquitto.conf:/mosquitto/config/mosquitto.conf
 
   panduza-py-platform:
-    build: /home/xdoctorwhoz/work/panduza-py-platform
+    image: ghcr.io/panduza/panduza-py-platform:latest
+    # image: ghcr.io/panduza/panduza-py-platform-dev:latest
     privileged: true
     network_mode: host
     volumes:
       - .:/etc/panduza
-      - /run/udev:/run/udev:ro  # Import udev database for usb ids inside the docker
+      - /run/udev:/run/udev:ro
     # command: bash
 
